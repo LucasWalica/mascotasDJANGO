@@ -1,0 +1,33 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>{% block title %}Paises{% endblock %}</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="icon" href="{% static 'assets/favicon/favicon-32x32.png' %}" type="image/x-icon">
+		{% block extrahead %}
+		{% endblock extrahead %}
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-emerald-100 font-mono leading-normal tracking-normal">
+			<center>
+			<h1 class="bg-emerald-700 rounded-sm m-4 p-2 text-emerald-200 text-2xl">Cuidador de Mascotas Wali</h1>
+			</center>
+			<nav class="grid grid-cols-2 bg-emerald-700 p-4 m-4 rounded-md">
+				<center>
+					<div><a class="bg-emerald-700 rounded-md p-2 text-emerald-300 hover:pl-3 hover:pr-3 duration-100 hover:bg-emerald-950 hover:text-emerald-50" href="{% url "mascotas" %}">Lista de mascotas</a></div>
+				</center>
+				<center>
+					<div><a class="bg-emerald-700 rounded-md p-2 text-emerald-300 hover:pl-3 hover:pr-3 duration-100 hover:bg-emerald-950 hover:text-emerald-50" href="{% url "crearMascota" %}">Crear Nueva Mascota</a></div>
+				</center>
+			</nav>
+			{% block content %}
+			{% endblock %}
+			
+	</body>
+</html>
+
+

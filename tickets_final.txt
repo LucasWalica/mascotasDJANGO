@@ -1,0 +1,10 @@
+ejerciico final de Fonsi:
+	
+	vistas lista-> Añadir botones de detalle y delete
+	vistas detalle-> añadir todo (funcionalidad javascript, dar de comer, deporte, etc)
+	vistas tienda y deporte o minijuego?(forma de ganar monedas)-> implentar completamente
+	vistas borras_> implementar
+	usar libreria instalada para restar cantidad a mascotas cada X horas y bajar sus stats
+	implementar funcionalidad de morir de la mascota, si esta muere, se añade cambia por una tumba	
+
+	(puede que sea buena idea, si sobra tiempo añadir mas mascotas)

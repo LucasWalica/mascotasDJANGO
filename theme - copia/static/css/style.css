@@ -1,0 +1,25 @@
+.orejon_class{
+    border-radius: 10px;
+    margin: 10px;
+    background-image: url(../assets/PetNormal256.png);
+    height: 256px;
+    width: 256px;
+    animation: ide 2s infinite steps(8);
+}
+.magmitar_class{
+    border-radius: 10px;
+    margin: 10px;
+    background-image: url(../assets/magma256.png);
+    height: 256px;
+    width: 256px;
+    animation: ide2 3s infinite steps(9);
+}
+
+@keyframes ide {
+    from{background-position: 0px;}
+    to{background-position: 2048px;}
+}
+@keyframes ide2{
+    from{background-position: 0px;}
+    to{background-position: 2304px;}
+}

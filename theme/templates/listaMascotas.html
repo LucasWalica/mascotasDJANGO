@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/mascotaViewer.js' %}"></script>
+{% endblock extrahead%}
+{% block content %}
+<div class="grid laptop:grid-cols-3 tablet:grid-cols-1">
+    {% for mascota in mascotas%}    
+        <div class="bg-emerald-700 m-2 rounded-md text-emerald-200">
+            <center>
+                <h1>Nombre: {{mascota.nombre}}</h1>
+                <h1>Entretenimiento: {{mascota.entretenimiento}}</h1>
+                <h1>Higiene: {{mascota.higiene}}</h1>
+                <h1>Saciedad: {{mascota.saciedad}}</h1>
+                <h1>HP: {{mascota.hp}}</h1> 
+                <div class="sprite text-emerald-50">{{mascota.tipo_de_sprite}}</div>
+            </center>
+        </div>
+    {% endfor %}
+<div>
+{% endblock content %}
