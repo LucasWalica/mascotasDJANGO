@@ -13,6 +13,12 @@ class Mascota(models.Model):
     entretenimiento = models.IntegerField(default=10)
     saciedad = models.IntegerField(default=10)
     higiene = models.IntegerField(default=10)
+    energia = models.IntegerField(default=20)
     hp = models.IntegerField(default=100)
+    
+class Items(models.Model):
+    manzanas = models.IntegerField(default=10)
+    jabones = models.IntegerField(default=10)
+    juguetes = models.IntegerField(default=10)
     
     

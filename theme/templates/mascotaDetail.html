@@ -1,1 +1,64 @@
-detail mascota
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/mascotaViewer.js' %}"></script>
+{% endblock extrahead%}
+{% block content %}
+        <div class="bg-emerald-700 rounded-md text-emerald-200 grid laptop:grid-cols-3 tablet:grid-cols-1 text-center">
+            <div class="m-2 bg-emerald-400 rounded-md content-center">
+                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Nombre: {{mascota.nombre}}</h1>
+                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Felicidad: {{mascota.entretenimiento}}</h1>
+                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Higiene: {{mascota.higiene}}</h1>
+                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Saciedad: {{mascota.saciedad}}</h1>
+                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Energia: {{mascota.energia}}</h1>
+                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">HP: {{mascota.hp}}</h1> 
+            </div>
+            <center>
+                <div class="sprite text-emerald-50">{{mascota.tipo_de_sprite}}</div>
+            </center>
+            <div>
+                <div class="bg-emerald-800 m-2 rounded-md">
+                    <h1 class="text-xl">Objetos: </h1>
+                    <hr>
+                    <h1>Juguetes: {{items.juguetes}}</h1>
+                    <h1>Manzanas : {{items.manzanas}}</h1>
+                    <h1>Jabones: {{items.jabones}}</h1>
+                </div>
+                <div>
+                    <div class="bg-emerald-950 m-4 rounded-md"> 
+
+                        {% if items.juguetes > 0 %}
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="m-1 bg-emerald-800 pl-2 pr-2 p-1 rounded-md hover:pr-4 hover:pl-4 hover:bg-emerald-400 hover:text-emerald-950 duration-150" name="entretenimiento">Jugar</button>
+                        </form>
+                        {% else %}
+                        No se tienen Juguetes
+                        {% endif %}
+
+                        {% if items.manzanas > 0 %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <div>
+                                    <button type="submit" class="m-1 bg-emerald-800 pl-2 pr-2 p-1 rounded-md hover:pr-4 hover:pl-4 hover:bg-emerald-400 hover:text-emerald-950 duration-150" name="saciedad">Alimentar</button>
+                                </div>
+                            </form>
+                        {% else %}
+                            No se tienen Manzanas
+                        {% endif %}
+
+                        {% if items.jabones > 0 %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="m-1 bg-emerald-800 pl-2 pr-2 p-1 rounded-md hover:pr-4 hover:pl-4 hover:bg-emerald-400 hover:text-emerald-950 duration-150" name="higiene">Limpiar</button>
+                            </form>
+                        {% else %}
+                            No se tienen Jabones
+                        {% endif %}
+                        
+                    </div>
+                </div>
+        </div>
+    </div>
+{% endblock content %}

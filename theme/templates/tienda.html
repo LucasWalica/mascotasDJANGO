@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+{% block extrahead %}
+    
+{% endblock extrahead%}
+{% block content %}
+    <div class="bg-emerald-600 text-white m-5">
+
+        <div>
+            <h1>Inventario</h1>
+            Juguetes{{items.juguetes}}
+            manzanas {{items.manzanas}}
+            jabones {{items.jabones}}
+        </div>
+        <div>
+            <h1>Comprar: </h1>
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    <button type="submit" name="comprarManzanas">ComprarManzanas</button>
+                </div>
+            </form>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    <button type="submit" name="comprarJuguetes">Comprar Juguetes</button>
+                </div>
+            </form>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    <button type="submit" name="comprarJabones">Comprar Jabones</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

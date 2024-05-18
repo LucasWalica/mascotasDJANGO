@@ -9,13 +9,25 @@
     {% for mascota in mascotas%}    
         <div class="bg-emerald-700 m-2 rounded-md text-emerald-200">
             <center>
-                <h1>Nombre: {{mascota.nombre}}</h1>
-                <h1>Entretenimiento: {{mascota.entretenimiento}}</h1>
-                <h1>Higiene: {{mascota.higiene}}</h1>
-                <h1>Saciedad: {{mascota.saciedad}}</h1>
+                <h1>{{mascota.nombre}}</h1>
+                <div class="grid grid-cols-2">
+                    <div>
+                        <h1>Felicidad: {{mascota.entretenimiento}}</h1>
+                        <h1>Higiene: {{mascota.higiene}}</h1>
+                    </div>
+                    <div>
+                        <h1>Saciedad: {{mascota.saciedad}}</h1>
+                        <h1>Energia: {{mascota.energia}}</h1>
+                    </div>
+                    <br>
+                </div>
                 <h1>HP: {{mascota.hp}}</h1> 
                 <div class="sprite text-emerald-50">{{mascota.tipo_de_sprite}}</div>
+                <a href="{% url "mascota" pk=mascota.pk %}" class="p-2 m-4 bg-emerald-400 text-emerald-950 rounded-md hover:bg-emerald-950 hover:text-emerald-400 hover:pl-4 hover:pr-4 duration-150">
+                    Ver a {{mascota.nombre}}
+                </a>
             </center>
+            <br>
         </div>
     {% endfor %}
 <div>
