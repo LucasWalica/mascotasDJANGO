@@ -1,6 +1,6 @@
 ejerciico final de Fonsi:
 	
-	vistas lista-> Añadir botones de detalle y delete
+	boton de delete y cambiar por lapida si llega a 0
 	vistas detalle-> añadir todo (funcionalidad javascript, dar de comer, deporte, etc)
 	vistas tienda y deporte o minijuego?(forma de ganar monedas)-> implentar completamente
 	vistas borras_> implementar
