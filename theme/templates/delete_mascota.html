@@ -1,1 +1,15 @@
-delete mascota
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock extrahead%}
+
+{% block content %}
+<form id="crear-mascota-form" method="POST" class="text-emerald-300 bg-emerald-800 p-2 rounded-md m-4">
+    {% csrf_token %}
+    <center>
+        {{mascota.nombre}} ha muerto, borrar Mascota:
+        <button type="delete" class="bg-emerald-600 text-emerald-100 px-4 py-1 rounded-md hover:text-emerald-950 hover:bg-emerald-400">Borrar</button>
+    </center>
+</form>
+{% endblock content %}

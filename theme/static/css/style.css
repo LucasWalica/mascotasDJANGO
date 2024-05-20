@@ -14,6 +14,13 @@
     width: 256px;
     animation: ide2 3s infinite steps(9);
 }
+#rip_clase {
+    border-radius: 10px;
+    margin: 10px;
+    background-image: url(../assets/RIP.png);
+    width: 256px;
+    height: 256px;
+}
 
 @keyframes ide {
     from{background-position: 0px;}

@@ -1,7 +1,7 @@
 from mascota.models import Mascota
 from background_task import background
 
-@background(schedule=60)
+@background(schedule=7200)
 def my_task():    
     mascotas = Mascota.objects.all()
     for mascota in mascotas:
@@ -17,6 +17,9 @@ def my_task():
         if mascota.higiene <= 3:
             mascota_mal_count += 1
         mascota.hp = max(mascota.hp - mascota_mal_count, 0)
+        
+        if mascota_mal_count==0 and mascota.hp<100 and mascota.hp>0:
+            mascota.hp = mascota.hp + 3
         mascota.save()
         
 

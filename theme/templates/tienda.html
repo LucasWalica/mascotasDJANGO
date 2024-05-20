@@ -4,33 +4,40 @@
     
 {% endblock extrahead%}
 {% block content %}
-    <div class="bg-emerald-600 text-white m-5">
+    <div class="bg-emerald-600 text-white m-5 rounded-md">
+        <br>
+        <center>
+            <h1 class="text-center m-2 bg-emerald-950 text-emerald-400 w-1/5 rounded-md">Inventario</h1>
+        </center>
+        <div class="grid grid-cols-3 text-center bg-emerald-700 m-4 rounded-md">
+            <div>
+                Juguetes: {{items.juguetes}}
+            </div>
+            <div>
+                Manzanas: {{items.manzanas}}
+            </div>
+            <div>
+                Jabones: {{items.jabones}}
+            </div>
 
-        <div>
-            <h1>Inventario</h1>
-            Juguetes{{items.juguetes}}
-            manzanas {{items.manzanas}}
-            jabones {{items.jabones}}
         </div>
-        <div>
-            <h1>Comprar: </h1>
-            <br>
+        <div class="grid grid-cols-3 text-center p-2">
+            {% csrf_token %}
+            <div>
+                <button type="submit" name="comprarJuguetes" class="bg-blue-600 text-black hover:text-white hover:bg-blue-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Juguetes</button>
+
+            </div>
+            </form>
             <form method="post">
                 {% csrf_token %}
                 <div>
-                    <button type="submit" name="comprarManzanas">ComprarManzanas</button>
+                    <button type="submit" name="comprarManzanas"  class="bg-red-600 text-black hover:text-white hover:bg-red-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Manzanas</button>
                 </div>
             </form>
             <form method="post">
                 {% csrf_token %}
                 <div>
-                    <button type="submit" name="comprarJuguetes">Comprar Juguetes</button>
-                </div>
-            </form>
-            <form method="post">
-                {% csrf_token %}
-                <div>
-                    <button type="submit" name="comprarJabones">Comprar Jabones</button>
+                    <button type="submit" name="comprarJabones"  class="bg-purple-600 text-black hover:text-white hover:bg-purple-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Jabones</button>
                 </div>
             </form>
         </div>

@@ -21,8 +21,13 @@
                     </div>
                     <br>
                 </div>
-                <h1>HP: {{mascota.hp}}</h1> 
-                <div class="sprite text-emerald-50">{{mascota.tipo_de_sprite}}</div>
+                <h1>HP: {{mascota.hp}}</h1>
+                {% if mascota.hp > 0 %}
+                    <div class="sprite text-emerald-50">{{mascota.tipo_de_sprite}}</div>
+                {% else %}
+                    <img src="{% static "assets/RIP.png" %}"></img>
+                    <br>
+                {% endif %} 
                 <a href="{% url "mascota" pk=mascota.pk %}" class="p-2 m-4 bg-emerald-400 text-emerald-950 rounded-md hover:bg-emerald-950 hover:text-emerald-400 hover:pl-4 hover:pr-4 duration-150">
                     Ver a {{mascota.nombre}}
                 </a>

@@ -16,6 +16,9 @@ class Mascota(models.Model):
     energia = models.IntegerField(default=20)
     hp = models.IntegerField(default=100)
     
+    def __str__(self):
+        return f" {self.pk} {self.nombre}"
+    
 class Items(models.Model):
     manzanas = models.IntegerField(default=10)
     jabones = models.IntegerField(default=10)
