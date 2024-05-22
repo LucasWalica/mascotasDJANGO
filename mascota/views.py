@@ -90,7 +90,7 @@ class MascotaDetailView(View):
         }
         return render(request, 'mascotaDetail.html', context) 
 
-class MascotaCreateView(View):
+class MascotaCreateView( View):
     def get(self, request, *args, **kwargs):
         form = PetCreateForm()
         context = {

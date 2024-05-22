@@ -22,22 +22,31 @@
 
         </div>
         <div class="grid grid-cols-3 text-center p-2">
+            <form method="post">
             {% csrf_token %}
-            <div>
-                <button type="submit" name="comprarJuguetes" class="bg-blue-600 text-black hover:text-white hover:bg-blue-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Juguetes</button>
-
+            <div class="bg-blue-900 rounded-md m-2 p-1">
+                <center>
+                    <button type="submit" name="comprarJuguetes" class="bg-blue-600 text-black hover:text-white hover:bg-blue-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Juguetes</button>
+                    <img class="rounded-md" src="{% static "assets/juguete64.png" %}"></img>
+                </center>
             </div>
             </form>
             <form method="post">
                 {% csrf_token %}
-                <div>
-                    <button type="submit" name="comprarManzanas"  class="bg-red-600 text-black hover:text-white hover:bg-red-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Manzanas</button>
+                <div class="bg-red-900 rounded-md m-2 p-1">
+                    <center>
+                        <button type="submit" name="comprarManzanas"  class="bg-red-600 text-black hover:text-white hover:bg-red-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Manzanas</button>
+                        <img  class="rounded-md" src="{% static "assets/Apple64.png" %}"></img>
+                    </center>
                 </div>
             </form>
             <form method="post">
                 {% csrf_token %}
-                <div>
-                    <button type="submit" name="comprarJabones"  class="bg-purple-600 text-black hover:text-white hover:bg-purple-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Jabones</button>
+                <div class="bg-purple-900 rounded-md m-2 p-1">
+                    <center>
+                        <button type="submit" name="comprarJabones"  class="bg-purple-600 text-black hover:text-white hover:bg-purple-900 rounded-md p-2 duration-150 hover:pl-6 hover:pr-6">Comprar Jabones</button>
+                        <img class="rounded-md" src="{% static "assets/jabon64.png" %}"></img>
+                    </center>
                 </div>
             </form>
         </div>

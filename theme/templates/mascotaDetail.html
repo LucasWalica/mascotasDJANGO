@@ -7,10 +7,10 @@
 {% block content %}
         <div class="bg-emerald-700 rounded-md text-emerald-200 grid laptop:grid-cols-3 tablet:grid-cols-1 text-center">
             <div class="m-2 bg-emerald-400 rounded-md content-center">
-                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Nombre: {{mascota.nombre}}</h1>
-                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Felicidad: {{mascota.entretenimiento}}</h1>
-                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Higiene: {{mascota.higiene}}</h1>
-                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Saciedad: {{mascota.saciedad}}</h1>
+                <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md text-xl">Nombre: {{mascota.nombre}}</h1>
+                <h1 class="bg-blue-900 text-emerald-300 m-1 p-1 rounded-md">Felicidad: {{mascota.entretenimiento}}</h1>
+                <h1 class="bg-purple-900 text-emerald-300 m-1 p-1 rounded-md">Higiene: {{mascota.higiene}}</h1>
+                <h1 class="bg-red-900 text-emerald-300 m-1 p-1 rounded-md">Saciedad: {{mascota.saciedad}}</h1>
                 <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">Energia: {{mascota.energia}}</h1>
                 <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md">HP: {{mascota.hp}}</h1> 
             </div>
@@ -23,13 +23,25 @@
                     <br>
                 {% endif%}
             </center>
-            <div>
+            <div class="grid laptop:grid-cols-1 tablet:grid-cols-2 justify-center content-center">
                 <div class="bg-emerald-800 m-2 rounded-md">
                     <h1 class="text-xl">Objetos: </h1>
                     <hr>
-                    <h1>Juguetes: {{items.juguetes}}</h1>
-                    <h1>Manzanas : {{items.manzanas}}</h1>
-                    <h1>Jabones: {{items.jabones}}</h1>
+                    <div class="grid laptop:grid-cols-3 tablet:grid-cols-1 m-2 bg-emerald-950 p-2 rounded-sm">
+                        <div></div>
+                        <div>
+                            <div class="grid grid-cols-2 bg-blue-600 rounded-md">
+                                <h1>Juguetes  {{items.juguetes}}</h1><img class="rounded-md" src="{% static "assets/juguete64.png" %}"></img>
+                            </div>
+                            <div  class="grid grid-cols-2 bg-violet-600 rounded-md">
+                                <h1>Jabones  {{items.jabones}}</h1><img  class="rounded-md" src="{% static "assets/jabon64.png" %}"></img>
+                            </div>
+                            <div  class="grid grid-cols-2 bg-red-600 rounded-md">
+                                <h1>Manzanas  {{items.manzanas}}</h1><img class="rounded-md" src="{% static "assets/apple64.png" %}"></img>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
                 </div>
                 <div>
                     <div class="bg-emerald-950 m-4 rounded-md"> 
