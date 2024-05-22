@@ -2,4 +2,3 @@ Django==4.0.10
 django-tailwind==3.8.0
 django-browser-reload==1.12.1
 django4-background-tasks==1.2.9
-pyenv-win==3.1.1
