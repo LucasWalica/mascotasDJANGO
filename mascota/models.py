@@ -5,6 +5,7 @@ from enum import Enum
 class tipoSprite(Enum):
     Orejon = "orejon"
     Magmitar = "magmitar"
+    Flotante = "flotante"
 
 # Create your models here.
 class Mascota(models.Model):

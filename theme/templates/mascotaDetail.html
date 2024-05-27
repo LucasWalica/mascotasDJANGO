@@ -8,20 +8,24 @@
         <div class="bg-emerald-700 rounded-md text-emerald-200 grid laptop:grid-cols-3 tablet:grid-cols-1 text-center">
             <div class="m-2 bg-emerald-400 rounded-md content-center">
                 <h1 class="bg-emerald-950 text-emerald-300 m-1 p-1 rounded-md text-xl">Nombre: {{mascota.nombre}}</h1>
-                <h1 class="bg-blue-900 text-emerald-300 m-1 p-1 rounded-md">Felicidad: {{mascota.entretenimiento}}</h1>
-                <h1 class="bg-purple-900 text-emerald-300 m-1 p-1 rounded-md">Higiene: {{mascota.higiene}}</h1>
-                <h1 class="bg-red-900 text-emerald-300 m-1 p-1 rounded-md">Saciedad: {{mascota.saciedad}}</h1>
-                <h1 class="bg-yellow-600 text-emerald-950 m-1 p-1 rounded-md">HP: {{mascota.hp}}</h1> 
+                <div class="grid tablet:grid-cols-2 laptop:grid-cols-1">
+                    <h1 class="bg-blue-900 text-emerald-300 m-1 p-1 rounded-md">Felicidad: {{mascota.entretenimiento}}</h1>
+                    <h1 class="bg-purple-900 text-emerald-300 m-1 p-1 rounded-md">Higiene: {{mascota.higiene}}</h1>
+                    <h1 class="bg-red-900 text-emerald-300 m-1 p-1 rounded-md">Saciedad: {{mascota.saciedad}}</h1>
+                    <h1 class="bg-yellow-600 text-emerald-950 m-1 p-1 rounded-md">HP: {{mascota.hp}}</h1> 
+                </div>
             </div>
-            <center>
-                {% if mascota.hp > 0 %}
+            <div class="content-center bg-orange-900 m-2 rounded-md">
+                <center>
+                    {% if mascota.hp > 0 %}
                     <div class="sprite text-emerald-50">{{mascota.tipo_de_sprite}}</div>
-                {% else %}
+                    {% else %}
                     <br>
                     <img src="{% static "assets/RIP.png" %}"></img>
                     <br>
-                {% endif%}
-            </center>
+                    {% endif%}
+                </center>
+            </div>
             <div class="grid laptop:grid-cols-1 tablet:grid-cols-2 justify-center content-center">
                 <div class="bg-emerald-800 m-2 rounded-md">
                     <h1 class="text-xl">Objetos: </h1>
@@ -42,10 +46,9 @@
                         <div></div>
                     </div>
                 </div>
-                <div>
+                <div class="justify-center content-center">
                     <div class="bg-emerald-950 m-4 rounded-md"> 
                     {% if mascota.hp > 0 %}
-                       
                         {% if items.juguetes > 0 %}
                         <form method="post">
                             {% csrf_token %}
@@ -74,10 +77,9 @@
                         {% endif %}
                     {% else %}
                         <a href="{% url 'borrarMascota' pk=mascota.pk %}" class="hover:bg-emerald-600 duration-150 pl-4 pr-5 p-1 m-2 rounded-md"> Borrador de mascotas</a>
-                    {% endif%}
-                        
+                    {% endif%}                        
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
 {% endblock content %}

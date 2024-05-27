@@ -1,8 +1,14 @@
 from mascota.models import Mascota
 from background_task import background
 
-@background(schedule=7200)
-def my_task():    
+# Borrar tareas :> python manage.py shell
+# from background_task.models import Task
+# Task.objects.all().delete()
+
+# Iniciar -> python manage.py process_tasks
+
+@background(schedule=30)
+def disminucion():    
     mascotas = Mascota.objects.all()
     for mascota in mascotas:
         mascota.entretenimiento = max(mascota.entretenimiento - 1, 0)
@@ -23,4 +29,4 @@ def my_task():
         mascota.save()
         
 
-my_task(repeat=7200)
+disminucion(repeat=30)

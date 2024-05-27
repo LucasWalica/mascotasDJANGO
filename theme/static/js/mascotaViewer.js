@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(){
             element.classList.add('magmitar_class');
         }else if(spriteValue==="orejon"){
             element.classList.add('orejon_class');
+        }else if(spriteValue==="flotante"){
+            element.classList.add('flotante_class');
         }
     });
     

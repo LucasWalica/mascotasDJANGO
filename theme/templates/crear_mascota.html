@@ -10,24 +10,37 @@
         <center>
             Nombre: 
             {{form.nombre}}
-            <div class="grid laptop:grid-cols-2 tablet:grid-cols-1">
+            <div class="grid laptop:grid-cols-3 tablet:grid-cols-1 bg-emerald-900 rounded-sm m-2">
                 <div class="bg-emerald-800 m-10 rounded-md">
-                    <div class="bg-emerald-600 p-2 rounded-sm m-2">
+                    <div class="bg-emerald-600 p-2 rounded-md m-2">
                         <div class="magmitar_class"></div>
                         <div class="text-emerald-300 text-2xl">Magmitar</div> 
                     </div>
                 </div>
                 <div class="bg-emerald-800 m-10 rounded-md">
-                    <div class="bg-emerald-600 p-2 rounded-sm m-2">
+                    <div class="bg-emerald-600 p-2 rounded-md m-2">
                         <div class="orejon_class"></div>
                         <div class="text-emerald-300 text-2xl">Orejón</div> 
                     </div>
                 </div>
+                <div class="bg-emerald-800 m-10 rounded-md">
+                    <div class="bg-emerald-600 p-2 rounded-md m-2">
+                        <div class="flotante_class"></div>
+                        <div class="text-emerald-300 text-2xl">Flotante</div> 
+                    </div>
+                </div>
             </div>
             <div>
+                <div class="content-center">
+                    <h1 class="text-xl">Tipo de mascota:</h1>
+                </div>
                 {{form.tipo_de_sprite}}
             </div>
-            <button type="submit">Crear Mascota</button>
+            <div class="m-2">
+                <button type="submit" class="m-2 p-2 bg-orange-400 text-black rounded-md hover:pl-8 hover:pr-8 duration-150 hover:bg-orange-950 hover:text-white">
+                    Crear Mascota
+                </button>
+            </div>
         </center>
     </form>
 {% endblock content %}

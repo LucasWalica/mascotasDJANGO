@@ -101,11 +101,11 @@ class MascotaCreateView( View):
         form = PetCreateForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('mascotas')
         context = {}
         return render(request, 'crear_mascota.html', context)
     
 class MascotaDeleteView(DeleteView):
     model = Mascota
     template_name = 'delete_mascota.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('mascotas')

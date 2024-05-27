@@ -14,6 +14,14 @@
     width: 256px;
     animation: ide2 3s infinite steps(9);
 }
+.flotante_class{
+    border-radius: 10px;
+    margin: 10px;
+    background-image: url(../assets/flotante256.png);
+    height: 256px;
+    width: 256px;
+    animation: ide3 7s infinite steps(19);
+}
 #rip_clase {
     border-radius: 10px;
     margin: 10px;
@@ -29,4 +37,8 @@
 @keyframes ide2{
     from{background-position: 0px;}
     to{background-position: 2304px;}
+}
+@keyframes ide3{
+    from{background-position: 0px;}
+    to{background-position: 4864px;}
 }
